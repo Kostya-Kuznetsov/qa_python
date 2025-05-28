@@ -5,10 +5,8 @@ from main import BooksCollector
 # класс TestBooksCollector объединяет набор тестов, которыми мы покрываем наше приложение BooksCollector
 # обязательно указывать префикс Test
 class TestBooksCollector:
-    # для удобства экземпляр класса перед каждым тестом создадим фикстурой
-    @pytest.fixture
-    def collector(self):
-        return BooksCollector()
+    # для удобства экземпляр класса перед каждым тестом создадим фикстурой в confest.py
+
     # пример теста:
     # обязательно указывать префикс test_
     # дальше идет название метода, который тестируем add_new_book_
@@ -127,6 +125,17 @@ class TestBooksCollector:
         collector.add_book_in_favorites('Sapiens')
         assert collector.get_list_of_favorites_books() == ['Хроники Риддика', 'Гарри Поттер', 'Sapiens']
 
+    #13 Тест вывода текущего словаря books_genre
+
+    def test_get_books_genre_returns_current_dict(self, collector):
+        collector.add_new_book('Хроники Риддика')
+        collector.set_book_genre('Хроники Риддика', 'Фантастика')
+        collector.add_new_book('Омен')
+        collector.set_book_genre('Омен', 'Ужасы')
+        assert collector.get_books_genre() == {
+            'Хроники Риддика': 'Фантастика',
+            'Омен': 'Ужасы'
+        }
 
 
 

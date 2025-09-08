@@ -18,9 +18,6 @@ class TestBooksCollector:
         assert len(collector.get_books_genre()) == 2
         assert 'Гордость и предубеждение и зомби' and 'Что делать, если ваш кот хочет вас убить' in collector.get_books_genre()
 
-    # напиши свои тесты ниже
-    # чтобы тесты были независимыми в каждом из них создавай отдельный экземпляр класса BooksCollector()
-    # далее будут мои тесты
 
     #2 Тест создания книги с невалидным значением по кол-ву символов
     @pytest.mark.parametrize("title", [

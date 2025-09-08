@@ -7,13 +7,7 @@ from main import BooksCollector
 class TestBooksCollector:
     # для удобства экземпляр класса перед каждым тестом создадим фикстурой в confest.py
 
-    # пример теста:
-    # обязательно указывать префикс test_
-    # дальше идет название метода, который тестируем add_new_book_
-    #1 затем, что тестируем add_two_books - добавление двух книг
     def test_add_new_book_add_two_books(self, collector):
-
-
 
         # добавляем две книги
         collector.add_new_book('Гордость и предубеждение и зомби')

@@ -3,7 +3,7 @@ import pytest
 from main import BooksCollector
 
 # класс TestBooksCollector объединяет набор тестов, которыми мы покрываем наше приложение BooksCollector
-# обязательно указывать префикс Test
+
 class TestBooksCollector:
     # для удобства экземпляр класса перед каждым тестом создадим фикстурой в confest.py
 
